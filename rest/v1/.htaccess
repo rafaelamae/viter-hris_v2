@@ -2,5 +2,6 @@ RewriteEngine On
 # use for authentication
 RewriteCond %{HTTP:Authorization} ^(.+)$
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteRule ^other-user/([^/]+)/?$ controllers/other-user/$1.php [L,QSA]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -1,9 +1,9 @@
-import { queryData } from "@/components/custom-hooks/queryData";
-import useQueryData from "@/components/custom-hooks/useQueryData";
+import { queryData } from "@/functions/custom-hooks/queryData";
+import useQueryData from "@/functions/custom-hooks/useQueryData";
 import {
   handleEscape,
   isEmptyItem,
-} from "@/components/helpers/functions-general";
+} from "@/functions/functions-general";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import React from "react";
 import { FaQuestion } from "react-icons/fa";

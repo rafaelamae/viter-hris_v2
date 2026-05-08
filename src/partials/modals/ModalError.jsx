@@ -1,5 +1,5 @@
 import React from "react";
-import { GetFocus } from "@/components/helpers/functions-general";
+import { GetFocus } from "@/functions/functions-general";
 import { setError, setSuccess } from "../../store/StoreAction";
 import { StoreContext } from "../../store/StoreContext";
 

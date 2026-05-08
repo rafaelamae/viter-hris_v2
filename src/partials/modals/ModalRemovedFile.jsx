@@ -1,4 +1,4 @@
-import { GetFocus } from "@/component/helpers/functions-general";
+import { GetFocus } from "@/functions/functions-general";
 import React from "react";
 import { FaQuestion } from "react-icons/fa";
 

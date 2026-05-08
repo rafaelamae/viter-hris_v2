@@ -3,7 +3,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { setIsSearch } from "../../store/StoreAction";
 import { StoreContext } from "../../store/StoreContext";
-import { getUserType } from "../helpers/functions-general";
+import { getUserType } from "../functions/functions-general";
 
 const BreadCrumbs = ({ param = "" }) => {
   const { store, dispatch } = React.useContext(StoreContext);

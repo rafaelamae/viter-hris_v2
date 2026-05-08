@@ -9,6 +9,8 @@ export const setTimezone = "Asia/Manila";
 
 // ROLES VARIABLE
 export const urlDeveloper = "developer";
+export const UrlDeveloper = urlDeveloper;
+export const UrlAdmin = "admin";
 
 // dev API KEY
 export const devKey = "123devkey";
@@ -21,6 +23,17 @@ export const isEmptyItem = (item, x = "") => {
     result = item;
   }
   return result;
+};
+
+export const setStorageRoute = (token) => {
+  const storageValue =
+    typeof token === "string" ? { token } : token || {};
+  localStorage.setItem("wfstoken", JSON.stringify(storageValue));
+};
+
+export const getUserType = () => {
+  const currentPath = window.location.pathname.split("/").filter(Boolean)[0];
+  return currentPath ? `/${currentPath}` : `/${urlDeveloper}`;
 };
 
 export const formatDate = (dateVal, val = "", format = "") => {

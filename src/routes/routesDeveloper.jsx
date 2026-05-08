@@ -1,4 +1,4 @@
-import { devNavUrl, urlDeveloper } from "../functions/functions-general";
+import { UrlAdmin, devNavUrl, urlDeveloper } from "../functions/functions-general";
 import Dashboard from "../pages/developer/dashboard/Dashboard";
 import Employees from "../pages/developer/employees/Employees";
 import Memo from "../pages/developer/memo/Memo";
@@ -7,9 +7,11 @@ import Users from "../pages/developer/settings/users/Users";
 import Department from "../pages/developer/settings/department/Department"; // NEW
 import Notification from "../pages/developer/settings/notification/Notification";
 
-export const routesDeveloper = [
+const rolePaths = [urlDeveloper, UrlAdmin];
+
+const createRoleRoutes = (rolePath) => [
   {
-    path: `${devNavUrl}/${urlDeveloper}/`,
+    path: `${devNavUrl}/${rolePath}/`,
     element: (
       <>
         <Dashboard />
@@ -17,7 +19,7 @@ export const routesDeveloper = [
     ),
   },
   {
-    path: `${devNavUrl}/${urlDeveloper}/dashboard`,
+    path: `${devNavUrl}/${rolePath}/dashboard`,
     element: (
       <>
         <Dashboard />
@@ -25,7 +27,7 @@ export const routesDeveloper = [
     ),
   },
   {
-    path: `${devNavUrl}/${urlDeveloper}/settings/users/roles`,
+    path: `${devNavUrl}/${rolePath}/settings/users/roles`,
     element: (
       <>
         <Roles />
@@ -33,7 +35,7 @@ export const routesDeveloper = [
     ),
   },
   {
-    path: `${devNavUrl}/${urlDeveloper}/employees`,
+    path: `${devNavUrl}/${rolePath}/employees`,
     element: (
       <>
         <Employees />
@@ -41,7 +43,7 @@ export const routesDeveloper = [
     ),
   },
   {
-    path: `${devNavUrl}/${urlDeveloper}/settings/users`,
+    path: `${devNavUrl}/${rolePath}/settings/users`,
     element: (
       <>
         <Users />
@@ -49,7 +51,7 @@ export const routesDeveloper = [
     ),
   },
   {
-    path: `${devNavUrl}/${urlDeveloper}/memo`,
+    path: `${devNavUrl}/${rolePath}/memo`,
     element: (
       <>
         <Memo />
@@ -58,7 +60,7 @@ export const routesDeveloper = [
   },
   // NEW
   {
-    path: `${devNavUrl}/${urlDeveloper}/settings/department`,
+    path: `${devNavUrl}/${rolePath}/settings/department`,
     element: (
       <>
         <Department />
@@ -66,7 +68,7 @@ export const routesDeveloper = [
     ),
   },
   {
-    path: `${devNavUrl}/${urlDeveloper}/settings/notification`,
+    path: `${devNavUrl}/${rolePath}/settings/notification`,
     element: (
       <>
         <Notification />
@@ -74,3 +76,5 @@ export const routesDeveloper = [
     ),
   },
 ];
+
+export const routesDeveloper = rolePaths.flatMap(createRoleRoutes);

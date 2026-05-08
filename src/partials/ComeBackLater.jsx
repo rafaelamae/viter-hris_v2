@@ -1,4 +1,4 @@
-import { getUserType } from "@/components/helpers/functions-general";
+import { getUserType } from "@/functions/functions-general";
 import { FaScrewdriverWrench } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import FbsLogoSm from "../svg/FbsLogoSm";
